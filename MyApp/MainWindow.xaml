@@ -3,10 +3,36 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:MyApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        ResizeMode="NoResize"
+        Background="#03000d"
+        Title="MyMeth" Height="550" Width="900">
     <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="250"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
+        <Label Content="User's name " Grid.Column="0" Foreground="White" Margin="10" FontSize="15" FontFamily="Segoe UI Variable"/>
+        <Image Source="/img/diamond.png" Width="30" Height="30" Margin="200, 0, 0, 0" HorizontalAlignment="Left" Grid.Row="0"/>
+
+        <StackPanel Grid.Row="1">
+
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="MainScreen" Content="Главная" />
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="NotesScreen" Content="Заметки"  />
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="CabinetScreen" Content="Личный кабинет"  />
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="UserListScreen" Content="Список людей"/>
+        </StackPanel>
+
+
+        <StackPanel x:Name="MainScreenPanel" Grid.Column="1" Grid.Row="1">
+            
+        </StackPanel>
     </Grid>
 </Window>
