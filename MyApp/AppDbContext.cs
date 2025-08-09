@@ -12,6 +12,7 @@ namespace MyApp
     internal class AppDbContext : DbContext
     {
         public DbSet<Users> Users { get; set; }
+        public DbSet<Codes> Codes { get; set; }
 
         public AppDbContext()
         {

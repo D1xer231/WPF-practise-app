@@ -13,6 +13,7 @@
     <None Remove="img\diamond.png" />
     <None Remove="img\ico.png" />
     <None Remove="img\mainscreen.png" />
+    <None Remove="img\walter.jpg" />
   </ItemGroup>
 
   <ItemGroup>
@@ -33,6 +34,9 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
     <Resource Include="img\mainscreen.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="img\walter.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
