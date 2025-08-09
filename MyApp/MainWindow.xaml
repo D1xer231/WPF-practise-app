@@ -19,20 +19,49 @@
             <RowDefinition/>
         </Grid.RowDefinitions>
 
-        <Label Content="User's name " Grid.Column="0" Foreground="White" Margin="10" FontSize="15" FontFamily="Segoe UI Variable"/>
+        <Label Content="User's name " Grid.Column="0" 
+               Foreground="White" Margin="10" 
+               FontSize="15" 
+               FontFamily="Segoe UI Variable"/>
         <Image Source="/img/diamond.png" Width="30" Height="30" Margin="200, 0, 0, 0" HorizontalAlignment="Left" Grid.Row="0"/>
 
         <StackPanel Grid.Row="1">
 
-            <RadioButton Style="{StaticResource MenuItem}" x:Name="MainScreen" Content="Главная" />
-            <RadioButton Style="{StaticResource MenuItem}" x:Name="NotesScreen" Content="Заметки"  />
-            <RadioButton Style="{StaticResource MenuItem}" x:Name="CabinetScreen" Content="Личный кабинет"  />
-            <RadioButton Style="{StaticResource MenuItem}" x:Name="UserListScreen" Content="Список людей"/>
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="MainScreen" Content="Главная" Checked="RadioButton_Checked"/>
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="NotesScreen" Content="Заметки"  Checked="RadioButton_Checked"/>
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="CabinetScreen" Content="Личный кабинет"  Checked="RadioButton_Checked"/>
+            <RadioButton Style="{StaticResource MenuItem}" x:Name="UserListScreen" Content="Users list" Checked="RadioButton_Checked"/>
         </StackPanel>
 
-
+        <Grid Grid.Column="1">
+            <Image Source="/img/bar.png" Stretch="Fill" Height="25" Opacity="0.5" Width="500"/>
+            <TextBlock Text="Welcome to MyMeth" Foreground="White" FontSize="15" FontFamily="Segoe UI Variable" HorizontalAlignment="Center" Margin="0,14,0,10"/>
+        </Grid>
+        
         <StackPanel x:Name="MainScreenPanel" Grid.Column="1" Grid.Row="1">
+            <Image Source="/img/mainscreen.png" Height="490" Width="660" Stretch="Fill" HorizontalAlignment="Center" VerticalAlignment="Center"/>
             
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Grid.Column="1" x:Name="UserListScreenpanel" Visibility="Collapsed">
+            <ListBox x:Name="UsersList" Margin="80" HorizontalAlignment="Center" ItemsSource="{Binding Users}" ScrollViewer.HorizontalScrollBarVisibility="Disabled" Background="{x:Null}" BorderBrush="{x:Null}" MaxHeight="300" ScrollViewer.CanContentScroll="False" ScrollViewer.VerticalScrollBarVisibility="Auto">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Border Margin="2" Padding="5" Background="#006dff" CornerRadius="4">
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock Text="{Binding name}"
+                                   Foreground="White"
+                                   FontWeight="Bold"
+                                   Width="120" />
+                                <TextBlock Text="{Binding email}"
+                                   Foreground="White"
+                                   Margin="20,0,0,0"
+                                   Width="200" />
+                            </StackPanel>
+                        </Border>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
         </StackPanel>
     </Grid>
 </Window>

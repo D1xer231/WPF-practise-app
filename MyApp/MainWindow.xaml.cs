@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using MyApp.Models;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -19,20 +20,26 @@ namespace MyApp
         public MainWindow()
         {
             InitializeComponent();
+            MainScreen.IsChecked = true;
+
+            AppDbContext db = new AppDbContext();
+            List<Users> users = db.Users.ToList();
+
+            UsersList.ItemsSource = users;
         }
 
         private void RadioButton_Checked(object sender, RoutedEventArgs e)
         {
             string objName = ((RadioButton)sender).Name;
 
-            StackPanel[] panels = { MainScreenPanel }; // UserListScreenpanel };
+            StackPanel[] panels = { MainScreenPanel, UserListScreenpanel }; // UserListScreenpanel };
             foreach (var panel in panels)
                 panel.Visibility = Visibility.Hidden; //Collapsed
 
             switch (objName)
             {
                 case "MainScreen": MainScreenPanel.Visibility = Visibility.Visible; break;
-                //case "UserListScreen": UserListScreenpanel.Visibility = Visibility.Visible; break;
+                case "UserListScreen": UserListScreenpanel.Visibility = Visibility.Visible; break;
             }
 
         }
