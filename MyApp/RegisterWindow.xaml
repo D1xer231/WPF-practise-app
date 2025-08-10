@@ -1,0 +1,36 @@
+﻿<Window x:Class="MyApp.RegisterWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MyApp"
+        mc:Ignorable="d"
+        ResizeMode="NoResize"
+        Background="#03000d"
+        Title="MyMeth" Height="500" Width="600">
+    <Grid>
+        <Grid>
+            <Image Source="/img/bar.png" Stretch="Fill" Height="25" Opacity="0.5" Width="500" Margin="0,10,0,0" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+            <TextBlock Text="Registation to MyMeth" Foreground="White" FontSize="15" FontFamily="Segoe UI Variable" HorizontalAlignment="Center" Margin="0,12,0,0" FontWeight="Bold"/>
+        </Grid>
+
+        <StackPanel>
+            <Label Content="Registation" FontSize="20" Foreground="White" HorizontalAlignment="Center" Margin="0,90,0,0"/>
+            <Label Content="Enter Name:" Foreground="Gray" FontSize="10" HorizontalAlignment="Left" Margin="200,0,0,0"/>
+            
+            <TextBox x:Name="UsernameField" Foreground="White" FontSize="15" Background="#1471c3ff" Width="200" Height="25" Cursor="Hand" BorderBrush="{x:Null}"/>
+            <Label Content="Enter Email:" Foreground="Gray" FontSize="10" HorizontalAlignment="Left" Margin="200,0,0,0"/>
+            
+            <TextBox x:Name="EmailField" Foreground="White" FontSize="15" Background="#1471c3ff" Width="200" Height="25" Cursor="Hand" BorderBrush="{x:Null}"/>
+            <Label Content="Enter Password:" Foreground="Gray" FontSize="10" HorizontalAlignment="Left" Margin="200,0,0,0"/>
+            
+            <PasswordBox x:Name="PasswordField" Foreground="White" FontSize="15" Background="#1471c3ff" Width="200" Height="25" Cursor="Hand" Margin="0,0,0,0" BorderBrush="{x:Null}" />
+            <Label Content="Enter Your Best Meth:" Foreground="Gray" FontSize="10" HorizontalAlignment="Left" Margin="200,0,0,0"/>
+            
+            <TextBox x:Name="FavMethField" Foreground="White" FontSize="15" Background="#1471c3ff" Width="200" Height="25" Cursor="Hand" BorderBrush="{x:Null}"/>
+            <Button Name="RegisterButton" Content="Register" Foreground="White" Background="#006dff" Width="150" Height="30" Margin="0,25,0,0" FontSize="15" BorderBrush="{x:Null}" Click="RegisterButton_Click"/>
+
+            <Button Name="LoginBtn" Content="Login" Foreground="White" Width="150" Height="30" Margin="0,10,0,0" FontSize="15" BorderBrush="#FF006DFF" Background="{x:Null}" Click="LoginBtn_Click" /> 
+        </StackPanel>
+    </Grid>
+</Window>
